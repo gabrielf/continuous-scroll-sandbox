@@ -1,0 +1,19 @@
+#boundary {
+    position: fixed;
+    width: 100%;
+    border-top: 1px solid black;
+    bottom: 500px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    padding: 1em 1em 500px 1em;
+}
+
+*[data-more-url] {
+    border-top: 1px solid red;
+}

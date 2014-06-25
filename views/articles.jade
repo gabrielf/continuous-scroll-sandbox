@@ -1,0 +1,5 @@
+each article in articles
+  div
+    h2
+      a(href="/articles/" + article.id)= article.headline
+div(data-more-url="/content?start=" + next + "&t=" + t || 100)
