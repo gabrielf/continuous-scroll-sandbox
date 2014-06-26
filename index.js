@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var dimsum = require("dimsum");
 
 app.engine("jade", require("jade").__express);
 app.use(express.static(__dirname + "/public"));
@@ -40,7 +41,8 @@ function articles(start, end) {
 function article(i) {
   return {
     id: i,
-    headline: "Artikel " + i
+    headline: "Artikel " + i,
+    preamble: dimsum()
   };
 }
 
