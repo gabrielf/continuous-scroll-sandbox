@@ -22,7 +22,8 @@ function nearWindowEdge(element) {
 
 function loadMoreContent(element) {
   var loader = document.createElement("img");
-  loader.src = "/img/ajax-loader.gif";
+  loader.src = "/img/loading-icon.svg";
+  loader.className = "loading";
 
   var moreUrl = element.getAttribute("data-more-url");
   element.removeAttribute("data-more-url");
