@@ -6,21 +6,13 @@ app.engine("jade", require("jade").__express);
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", function (req, res) {
-  var end = Number(req.query.end) || 5;
-  res.render("index.jade", {
-    articles: articles(0, end),
-    next: end,
-    t: Number(req.query.t)
-  });
-});
-
-app.get("/articles", function (req, res) {
   setTimeout(function () {
     var start = Number(req.query.start) || 0;
     var end = Number(req.query.end) || 5;
-    res.render("articles.jade", {
+    var template = req.xhr ? "articles.jade" : "index.jade";
+    res.render(template, {
       articles: articles(start, end),
-      next: end + 1,
+      next: end,
       t: Number(req.query.t)
     });
   }, Number(req.query.t));
@@ -46,6 +38,6 @@ function article(i) {
   };
 }
 
-app.listen(1337, function () {
+app.listen(1337, function () {
   console.log("Listening on 1337");
 });

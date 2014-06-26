@@ -37,6 +37,7 @@ function loadMoreContent(element) {
 function get(url, callback) {
   var request = new XMLHttpRequest();
   request.open("GET", url, true);
+  request.setRequestHeader("X-Requested-With", "XMLHttpRequest");
   request.onload = function () {
     if (this.status === 200) {
       callback(this.response);
