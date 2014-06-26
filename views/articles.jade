@@ -2,4 +2,5 @@ each article in articles
   div
     h2
       a(href="/articles/" + article.id)= article.headline
-div(data-more-url="/content?start=" + next + "&t=" + t || 100)
+
+div(data-current-url="/?end=" + (next - 1) + "&t=" + (t || 100), data-more-url="/articles?start=" + next + "&end=" + (next + 5) + "&t=" + (t || 100), data-current=next - 1)

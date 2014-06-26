@@ -30,6 +30,7 @@ function loadMoreContent(element) {
   element.appendChild(loader);
   get(moreUrl, function (data) {
     element.innerHTML = data;
+    history.replaceState(null, null, element.querySelector("*[data-more-url]").getAttribute("data-current-url"));
   });
 }
 
