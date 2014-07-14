@@ -30,7 +30,16 @@ function loadMoreContent(element) {
   element.appendChild(loader);
   get(moreUrl, function (data) {
     element.innerHTML = data;
-    history.replaceState(null, null, element.querySelector("*[data-more-url]").getAttribute("data-current-url"));
+
+    var params = [];
+    var dynamicElements = document.querySelectorAll("*[data-more-url]");
+    for (var i = 0; i < dynamicElements.length; i++) {
+      var elem = dynamicElements[i];
+      params.push(elem.getAttribute("data-column-name") + "end=" + elem.getAttribute("data-current-end"));
+    }
+
+    var url = "/?" + params.join("&");
+    history.replaceState(null, null, url);
   });
 }
 

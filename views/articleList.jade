@@ -1,0 +1,8 @@
+mixin articleList(articleSet)
+  each article in articleSet.articles
+    div
+      h2
+        a(href="/articles/" + article.id)= article.headline
+      p= article.preamble
+
+  div(data-current-end=articleSet.end, data-column-name=articleSet.name, data-more-url=articleSet.moreUrl)

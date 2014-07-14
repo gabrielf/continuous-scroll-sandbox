@@ -1,3 +1,5 @@
+include articleList
+
 doctype html5
 html
   head
@@ -10,6 +12,9 @@ html
       a(href="/") Continuous scroll test
 
     #content
-      include articles
+      +articleList(mainArticles)
+
+    aside
+      +articleList(asideArticles)
 
     #boundary

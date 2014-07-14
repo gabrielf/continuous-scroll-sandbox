@@ -1,7 +1,3 @@
-each article in articles
-  div
-    h2
-      a(href="/articles/" + article.id)= article.headline
-    p= article.preamble
+include articleList
 
-div(data-current-url="/?end=" + (next - 1) + "&t=" + (t || 100), data-more-url="/?start=" + next + "&end=" + (next + 5) + "&t=" + (t || 100), data-current=next - 1)
++articleList(articles)

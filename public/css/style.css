@@ -11,7 +11,17 @@ body {
 }
 
 #content {
+    box-sizing: border-box;
     padding: 1em 1em 500px 1em;
+    float: left;
+    width: 75%;
+}
+
+aside {
+    box-sizing: border-box;
+    padding: 1em;
+    float: left;
+    width: 25%;
 }
 
 *[data-more-url] {
